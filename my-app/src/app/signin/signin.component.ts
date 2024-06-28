@@ -11,6 +11,7 @@ export class SigninComponent implements OnInit{
 
   constructor(private router: Router) { }
   ngOnInit(): void {
+    this.showSignInPage = true;
   }
 
   type: string = "password"
@@ -54,6 +55,17 @@ export class SigninComponent implements OnInit{
   closeSigninDropdown() {
     this.signInHovered.emit(false);
     this.signInClosed.emit();
+  }
+
+  showSignUpModal = false;
+
+  openSignUpModal() {
+    this.showSignUpModal = true;
+    this.showSignInPage = false;
+  }
+
+  closeSignUpModal() {
+    this.showSignUpModal = false;
   }
 }
 
